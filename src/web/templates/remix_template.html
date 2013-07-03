@@ -52,12 +52,12 @@
       <li>
         <check if="{{@released == TRUE && !empty(@URL_DOWN_REM_DIRECT)}}">
           <true>
-	          <a href="{{@BASE_URL}}/download/clips" id="link_to_download_direct">
-	            <img src="{{@_PATH}}/images/download-arrow-blue.png" class="download-arrow" alt="download arrow" />
-	            <img src="{{@_PATH}}/images/mov-icon-blue.png" alt="mov download" />
-	          </a>
-	        </true>
-	        <false>
+            <a href="{{@URL_DOWN_REM_DIRECT}}" id="link_to_download_direct" target="_blank">
+              <img src="{{@_PATH}}/images/download-arrow-blue.png" class="download-arrow" alt="download arrow" />
+              <img src="{{@_PATH}}/images/mov-icon-blue.png" alt="mov download" />
+            </a>
+          </true>
+          <false>
             <a href="#" id="link_to_download_direct" class="unavailable">
               <img src="{{@_PATH}}/images/mov-icon-blue.png" alt="mov download" />
             </a>
@@ -66,37 +66,39 @@
         <p>{{@dict_rem_download_direct}}<br>({{@dict_rem_download_direct_2}})</p>
       </li>
 
+      <exclude>
       <li>
         <check if="{{@released == TRUE && !empty(@URL_DOWN_REM_TORRENT)}}">
           <true>
-		        <a href="{{@BASE_URL}}/download/torrent" id="link_to_download_torrent">
-		          <check if="{{@released == TRUE}}"><true><img src="{{@_PATH}}/images/download-arrow-blue.png" class="download-arrow" alt="download arrow" /></true></check> 
-		          <img src="{{@_PATH}}/images/torrent-icon-blue.png" alt="torrent download" />
-		        </a>
-		      </true>
-		      <false>
+            <a href="{{@BASE_URL}}/download/torrent" id="link_to_download_torrent">
+              <check if="{{@released == TRUE}}"><true><img src="{{@_PATH}}/images/download-arrow-blue.png" class="download-arrow" alt="download arrow" /></true></check> 
+              <img src="{{@_PATH}}/images/torrent-icon-blue.png" alt="torrent download" />
+            </a>
+          </true>
+          <false>
             <a href="#" id="link_to_download_torrent" class="unavailable">
               <img src="{{@_PATH}}/images/torrent-icon-blue.png" alt="torrent download" />
             </a>
-		      </false>
-		    </check>
+          </false>
+        </check>
         <p>{{@dict_rem_download_torrent}}<br>({{@dict_rem_download_torrent_2}})</p>
       </li>
+      </exclude>
 
       <li>
         <check if="{{@released == TRUE && !empty(@URL_DOWN_REM_MATERIAL)}}">
           <true>
-		        <a href="{{@BASE_URL}}/download/materials" id="link_to_download_material">
-		          <img src="{{@_PATH}}/images/download-arrow-blue.png" class="download-arrow" alt="download arrow" />
-		          <img src="{{@_PATH}}/images/pdf-icon-blue.png" alt="pdf download" />
-		        </a>
-		      </true>
-		      <false>
+            <a href="{{@URL_DOWN_REM_MATERIAL}}" id="link_to_download_material" target="_blank">
+              <img src="{{@_PATH}}/images/download-arrow-blue.png" class="download-arrow" alt="download arrow" />
+              <img src="{{@_PATH}}/images/pdf-icon-blue.png" alt="pdf download" />
+            </a>
+          </true>
+          <false>
             <a href="#" id="link_to_download_material" class="unavailable">
               <img src="{{@_PATH}}/images/pdf-icon-blue.png" alt="pdf download" />
             </a>
-		      </false>
-		    </check>
+          </false>
+        </check>
         <p>{{@dict_rem_download_guide}}<br>({{@dict_rem_download_guide_2}})</p>
       </li>
 
@@ -266,10 +268,11 @@
           <a href="http://archive.org" target="_blank" title="Internet archive">
             <img src="{{@_PATH}}/images/logo-archive.png" alt="Internet archive">
           </a>
-   
+         <exclude>
            <a href="https://mega.co.nz" target="_blank" title="Mega">
             <img src="{{@_PATH}}/images/MegaLogo.png"  class="right" alt="Mega">
           </a>
+          </exclude>
  
          </div>
       </div>

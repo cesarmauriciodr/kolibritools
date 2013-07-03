@@ -46,16 +46,16 @@
         <p>{{@dict_uni_the_good_old_days_p}}</p>
       </div>
       <repeat group="{{@i_bg1}}" value="{{@index}}">
-	      <article class="video {{@parallax_videos[@index]['vid_published'] == 1 ? 'video-thumbnail' : 'desaturate-img'}}" id="{{@index}}">
-	        <h3 class="{{@parallax_videos[@index]['vid_protected'] == 1 ? 'border' : NULL}}">{{@parallax_videos[@index]['alt_title']}}</h3>
-	        <a href="#" class="disable-bg"></a>
-	        <img alt="{{@parallax_videos[@index]['vid_title']}}" src="{{@_PATH}}/images/covers/{{@parallax_videos[@index]['vid_thumbnail']}}">
-	        <div class="inner-text play">
-	          <h2 class="title">{{@parallax_videos[@index]['vid_title']}}</h2>
-	          <p>{{@parallax_videos[@index]['vid_synopsis_short_'.strtolower(@LANGUAGE)]}}</p>
-	          <a href="#" class="btn-play"></a>
-	        </div>
-	      </article>
+        <article class="video {{@parallax_videos[@index]['vid_published'] == 1 ? 'video-thumbnail' : 'desaturate-img'}}" id="{{@index}}">
+          <h3 class="{{@parallax_videos[@index]['vid_protected'] == 1 ? 'border' : NULL}}">{{@parallax_videos[@index]['alt_title']}}</h3>
+          <a href="#" class="disable-bg"></a>
+          <img alt="{{@parallax_videos[@index]['vid_title']}}" src="{{@_PATH}}/images/covers/{{@parallax_videos[@index]['vid_thumbnail']}}">
+          <div class="inner-text play">
+            <h2 class="title">{{@parallax_videos[@index]['vid_title']}}</h2>
+            <p>{{@parallax_videos[@index]['vid_synopsis_short_'.strtolower(@LANGUAGE)]}}</p>
+            <a href="#" class="btn-play"></a>
+          </div>
+        </article>
       </repeat>
     </section>
 
@@ -118,7 +118,7 @@
       </div>
       <article class="video" id="big-cosmonaut">
         <div class="paypal">
-	        <include if="{{isset(@the_movie) }}" href="{{@the_movie}}" />
+          <include if="{{isset(@the_movie) }}" href="{{@the_movie}}" />
         </div>
       </article>
     </section>
@@ -185,7 +185,7 @@
       <article class="video little" id="cosmo20">
         <img alt="{{@dict_com_the_book}}" src="{{@_PATH}}/images/covers/thumb_the_book.png">
         <check if="{{SessionManager::is_logged() && !empty(@URL_BOOK)}}">
-          <true><a href="{{@BASE_URL}}/download/book" alt="{{@dict_com_the_book}}"><h3 class="border">{{@dict_com_the_book}}</h3></a></true>
+          <true><a href="{{@@URL_BOOK}}" alt="{{@dict_com_the_book}}" target="_blank"><h3 class="border">{{@dict_com_the_book}}</h3></a></true>
           <false><h3 class="border">{{@dict_com_the_book}}</h3></false>
         </check>
       </article>

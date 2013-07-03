@@ -88,8 +88,8 @@
             </li>
             <li class="middle">
               <span class="badge"></span>
-              <check if="{{!empty(@URL_BOOK)}}">
-                <true><a href="{{@BASE_URL}}/download/book"><span class="text middle grey">{{@dict_com_cosmonaut_book}}</span></a></true>
+              <check if="{{SessionManager::is_logged() && !empty(@URL_BOOK)}}">
+                <true><a href="{{@URL_BOOK}}" target="_blank"><span class="text middle grey">{{@dict_com_cosmonaut_book}}</span></a></true>
                 <false><span class="text middle grey">{{@dict_com_cosmonaut_book}}</span></false>
               </check>
             </li>
