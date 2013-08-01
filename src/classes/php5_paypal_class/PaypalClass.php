@@ -146,7 +146,7 @@ class PaypalClass {
    * validate_ipn
    * @return boolean
    */
-  function validate_ipn() {
+  function validate_ipn($sandbox=FALSE) {
     // parse the paypal URL
     $url_parsed=parse_url($this->paypal_url);
     // generate the post string from the _POST vars aswell as load the
@@ -160,7 +160,12 @@ class PaypalClass {
     $post_string.="cmd=_notify-validate"; // append ipn command
 
     // open the connection to paypal
-    $fp = fsockopen($url_parsed['host'],"80",$err_num,$err_str,30);
+    if ($sandbox == FALSE) {
+      $fp = fsockopen($url_parsed['host'],"80",$err_num,$err_str,30);
+    } else {
+      // open the connection to paypal in sandbox mode
+      $fp = fsockopen('ssl://www.sandbox.paypal.com',443,$err_num,$err_str,30);
+    }
     if(!$fp) {
       // could not open the connection.  If loggin is on, the error message
       // will be in the log.

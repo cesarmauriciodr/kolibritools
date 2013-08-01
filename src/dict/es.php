@@ -249,7 +249,7 @@ return array (
 
   /** LOGIN */
   "dict_log_are_you"                => "¿ERES COSMONAUTA?",
-  "dict_log_forgot"                 => "Olvidé mi contraseña",
+  "dict_log_forgot"                 => "Necesito una contraseña",
   "dict_log_insert_your"            => "INTRODUCE TUS CREDENCIALES",
   "dict_log_err"                    => "Datos de acceso incorrectos",
   "dict_log_err_format_login"       => "E-mail no válido",
@@ -260,6 +260,11 @@ return array (
   "dict_log_your_email"             => "Tu e-mail",
   "dict_log_your_password"          => "Tu password",
   "dict_log_what_is_this"           => "¿Qué es esto?",
+
+  /** MAIL */
+  "dict_mai_header_thankyou"        => "[ CosmonautExperience.com ] ¡Gracias!",
+  "dict_mai_header_text_1"          => "¡Gracias por tu donación!",
+  "dict_mai_header_text_2"          => "Tu cuenta ha sido creada y puedes conseguir tu contraseña en el siguiente enlace con tu dirección de e-mail: ",
 
   /** MOVIE */
 	"dict_mov_average"								=> "La donación media es de ",
@@ -347,6 +352,15 @@ return array (
   "dict_rem_week_remix_2"           => "\"EL COSMONAUTA REMIX\"",
   "dict_rem_what_you_respect"       => "Esto es lo que debes respetar",
   "dict_rem_with_all_content"       => "... con todo el contenido de \"El Cosmonauta\" (excepto",
+
+  /** THANKS */
+  "dict_tha_account"                => "TU CUENTA HA SIDO CREADA.",
+  "dict_tha_p1"                     => "Puedes solicitar la contraseña de tu K-Pass",
+  "dict_tha_p2"                     => "o",
+  "dict_tha_p3"                     => "empezar a ver la película ya.",
+  "dict_tha_thank_you"              => "¡GRACIAS!",
+  "dict_tha_request_password"       => "PEDIR CONTRASEÑA",
+  "dict_tha_watch_it_now"           => "VER LA PELÍCULA",
 
   /** TIMELINE */
   "dict_tim_2008end_p"              => "Convertimos el cortometraje \"El Viaje del Cosmonauta\" en el largometraje \"El Cosmonauta\".",

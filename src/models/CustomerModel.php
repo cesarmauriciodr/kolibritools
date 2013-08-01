@@ -479,13 +479,32 @@ class CustomerModel {
    * @return $name String
 	 */
 	function new_cosmonaut($email, $name) {
-		Console::log("new_cosmonaut");
+
+    $f3 = F3::instance();
+
 		$firstname = $name;
 		$lastname = $name;
 		$note = "";
 		$password = $this->generate_password();
 		$group = 4; // Backer
 		$creation = $this->create($firstname, $lastname, $email, $note, $password, $group);
+
+    // send e-mail
+    $boundary = uniqid("HTMLDEMO");
+
+    // $header  = "From: ".$f3->get("dict_com_the_cosmonaut")." <".$f3->get("MAIL_NO_REPLY").">\r\n";
+    $header  = "From: fernando.porres@tecnilogica.com <".$f3->get("MAIL_NO_REPLY").">\r\n";
+    $header .= "MIME-Version: 1.0\r\n";
+    $header .= "Content-type: text/html; charset=utf-8'\r\n";
+
+    $link = strtolower($f3->get("LANGUAGE"))=="es" ? $f3->get("URL_SHOP_ES")."&controller=password" : $f3->get("URL_SHOP_EN")."&controller=password";
+
+    $send = mail(
+      $email,
+      $f3->get("dict_mai_header_thankyou"),
+      $f3->get("dict_mai_header_text_1")."<br/>".$f3->get("dict_mai_header_text_2")." ".$email."<br/>".$link,
+      $header);
+
 	}
 
 

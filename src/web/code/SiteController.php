@@ -1107,7 +1107,8 @@ class SiteController {
 	function paypal_ipn() {
 		$f3 = F3::instance();
 		$p = new PaypalClass;
-		if ($p->validate_ipn() && $p->ipn_data['payment_status']=='Completed') {
+		$path = $f3->get("BASE_URL")."/watch_it_now";
+		if ($p->validate_ipn(TRUE) && $p->ipn_data['payment_status']=='Completed') {
 			// most intereseting values are: ipn_data['payer_email'] and
 			// ipn_data['mc_gross]
 			if ($p->ipn_data['mc_gross'] >= 5) {
@@ -1119,13 +1120,13 @@ class SiteController {
 				if (empty($name)) {
 				  $name = $p->ipn_data['payer_business_name'];
 				}
-				$customer_model->new_cosmonaut($email, $name);
+				$result = $customer_model->new_cosmonaut($email, $name);
+				$path = $f3->get("BASE_URL")."/thank_you";
 			}
 			// create a guest session for the moment. Later, user will be availbe to
 			// access proptected contents using credential sent via e-mail
 			SessionManager::set_guest($p->ipn_data['payer_email']);
 		}
-		$path = $f3->get("BASE_URL")."/watch_it_now";
 		$f3->reroute($path);
 	}
 
@@ -1255,6 +1256,44 @@ class SiteController {
 		$f3->set("jump_to", "meet-the-team");
 		$this->about();
 	}
+
+
+
+	/**
+	 * thank_you
+	 *
+	 * Prepare template to thank users which have donated more than 5€.
+	 */
+	function thank_you() {
+		$f3 = F3::instance();
+
+		$f3->set('tem_content', "site_new_cosmonaut.html");
+		$f3->set('tem_header', 'site_header.html');
+		$f3->set('tem_footer', 'site_footer.html');
+		
+		$f3->set("extra_css", array("style.css"));
+
+		$f3->set("about_selected", true);
+
+		$f3->set('external_js', array (
+			"http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+			"http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"
+		));
+
+		$f3->set("extra_js", array (
+			"lib/modernizr-2.5.3-min.js",
+			"lib/plugins.js",
+			"src/cosmonaut.data.js",
+			"src/cosmonaut.common.js",
+			"src/cosmonaut.template.js",
+			"src/cosmonaut.thanks.js"
+		));
+
+		$this->prepare_language_data();
+		
+		echo Template::instance()->render('site_template.html');
+	}
+
 
 
 	/**

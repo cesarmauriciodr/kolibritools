@@ -249,7 +249,7 @@ return array (
 
   /** LOGIN */
   "dict_log_are_you"                => "ARE YOU A COSMONAUT?",
-  "dict_log_forgot"                 => "I forgot my password",
+  "dict_log_forgot"                 => "Get my password",
   "dict_log_insert_your"            => "INSERT YOUR K-PASS CREDENTIALS",
   "dict_log_err"                    => "Invalid access data",
   "dict_log_err_format_login"       => "Wrong e-mail format",
@@ -260,6 +260,11 @@ return array (
   "dict_log_your_email"             => "Your e-mail",
   "dict_log_your_password"          => "Your password",
   "dict_log_what_is_this"           => "What is this?",
+
+  /** MAIL */
+  "dict_mai_header_thankyou"        => "[ CosmonautExperience.com ] Thank you!",
+  "dict_mai_header_text_1"          => "Thank you for your donation!",
+  "dict_mai_header_text_2"          => "Your account has been created and you can get you password in the following link with your e-mail address: ",
 
   /** MOVIE */
 	"dict_mov_average"								=> "Average donation is ",
@@ -348,7 +353,16 @@ return array (
   "dict_rem_what_you_respect"       => "This is what you must observe",
   "dict_rem_with_all_content"       => "... with all the content of \"The Cosmonaut\" (except ",
 
-    /** TIMELINE */
+  /** THANKS */
+  "dict_tha_account"                => "YOUR ACCOUNT HAS BEEN CREATED.",
+  "dict_tha_p1"                     => "You can request you K-Pass password",
+  "dict_tha_p2"                     => "or",
+  "dict_tha_p3"                     => "start watching the movie now.",
+  "dict_tha_request_password"       => "GET PASSWORD",
+  "dict_tha_thank_you"              => "THANK YOU!",
+  "dict_tha_watch_it_now"           => "WATCH IT NOW",
+
+  /** TIMELINE */
   "dict_tim_2008end_p"              => "We make the short-film \"The Cosmonaut’s journey\" into a full feature film \"The Cosmonaut\".",
   "dict_tim_2008end"                => "END OF 2008",
   "dict_tim_2009begin_p"            => "The reading of \"Poetry for Cosmonauts\" gives the future film a final shape.",

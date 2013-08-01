@@ -53,6 +53,7 @@ $f3->route('GET  /press',                         "SiteController->press");
 $f3->route('GET  /producers',                     "SiteController->producers");
 $f3->route('GET  /remix',                         "SiteController->remix");
 $f3->route('GET  /submit',                        "SiteController->submit");
+$f3->route('GET  /thank_you',                     "SiteController->thank_you");
 $f3->route('GET  /the_plan',                      "SiteController->plan");
 $f3->route('GET  /the_team',                      "SiteController->team");
 
